@@ -12,7 +12,7 @@ UBTTask_AIBase::UBTTask_AIBase()
 
 void UBTTask_AIBase::OnGameplayTaskActivated(class UGameplayTask&)
 {
-
+	
 }
 
 float UBTTask_AIBase::GetStateTime(UBehaviorTreeComponent& OwnerComp)
@@ -71,6 +71,9 @@ AGlobalCharacter* UBTTask_AIBase::GetGlobalCharacter(UBehaviorTreeComponent& Own
 
 	// 컨트롤러에게 내가 조작하는 Pawn은 GetPawn을 사용한다.
 	AGlobalCharacter* Character = AiCon->GetPawn<AGlobalCharacter>();
+	//PrePos = Character->GetActorLocation();
+	//A++;
+	//BTPrePos();
 
 	if (nullptr == Character || false == Character->IsValidLowLevel())
 	{
@@ -81,7 +84,24 @@ AGlobalCharacter* UBTTask_AIBase::GetGlobalCharacter(UBehaviorTreeComponent& Own
 
 	return Character;
 }
+/*
+FVector UBTTask_AIBase::BTPrePos()
+{
+	if (A == 2)
+	{
+		MainPrePos = PrePos;
+	    return MainPrePos;
 
+	}
+	
+	return MainPrePos;
+}
+
+FVector UBTTask_AIBase::GetPrePos()
+{
+	return MainPrePos;
+}
+*/
 UBlackboardComponent* UBTTask_AIBase::GetBlackboardComponent(UBehaviorTreeComponent& OwnerComp)
 {
 	UBlackboardComponent* BlockBoard = OwnerComp.GetBlackboardComponent();
@@ -172,3 +192,20 @@ class AActor* UBTTask_AIBase::GetTargetSearch(UBehaviorTreeComponent& OwnerComp)
 
 	return ResultActor;
 }
+
+
+//MonsterPrePos();
+
+//void UBTTask_AIBase::MonsterPrePos(_Pos)
+//{
+	//Test 코드( 초기위치 )
+//	AActor* Pos = _Pos;
+//	_PrePos = Pos->GetActorLocation();    /*GetTransform().GetLocation();*/
+//	_PrePos.Z = 0.0f;
+	//_PrePos = OriginPos;
+//}
+
+//FVector UBTTask_AIBase::GetPrePos()
+//{
+//	return _PrePos;
+//}

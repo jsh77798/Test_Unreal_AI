@@ -23,11 +23,7 @@ EBTNodeResult::Type UBTTask_MOVE::ExecuteTask(UBehaviorTreeComponent& OwnerComp,
 {
 
 	GetGlobalCharacter(OwnerComp)->SetAniState(AIState::MOVE);
-
-	//Test 코드( 초기위치 )
-	FVector OriginPos = GetGlobalCharacter(OwnerComp)->GetActorLocation();
-	FVector PrePos = OriginPos;
-
+	
 	UCharacterMovementComponent* MoveCom = Cast<UCharacterMovementComponent>(GetGlobalCharacter(OwnerComp)->GetMovementComponent());
 
 	if (nullptr != MoveCom)
@@ -94,8 +90,8 @@ void UBTTask_MOVE::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory
 
 		if (SearchRange < Dir.Size())
 		{
-			// 원재 라리로 돌아가고
-			SetStateChange(OwnerComp, AIState::IDLE);
+			// 원재 자리로 돌아가고
+      		SetStateChange(OwnerComp, AIState::RETURN);
 			return;
 		}
 

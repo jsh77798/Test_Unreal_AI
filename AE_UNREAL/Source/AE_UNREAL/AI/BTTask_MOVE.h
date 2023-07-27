@@ -18,7 +18,7 @@ class AE_UNREAL_API UBTTask_MOVE : public UBTTask_AIBase
 	UBTTask_MOVE();
 
 public:
-	FVector PrePos;
+	
 
 
 protected:

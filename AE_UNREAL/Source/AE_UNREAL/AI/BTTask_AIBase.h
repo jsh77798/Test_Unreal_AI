@@ -46,4 +46,18 @@ public:
 	EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory);
 
 	void TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DelataSeconds) override;
+
+	/*
+	FVector PrePos;
+	FVector MainPrePos;
+	int A=0;
+	*/
+
+	FVector BTPrePos();
+	FVector GetPrePos();
+//public:
+//	void MonsterPrePos(_Pos);
+//	FVector GetPrePos();
+
+//	FVector _PrePos;
 };

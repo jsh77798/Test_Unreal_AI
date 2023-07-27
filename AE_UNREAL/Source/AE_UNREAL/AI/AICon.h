@@ -16,6 +16,8 @@ class AE_UNREAL_API AAICon : public AAIController
 
 public:
 	AAICon();
+	FVector GetPrePos();
+	FVector AIPrePos;
 
 protected:
 	void OnPossess(APawn* _InPawn) override;

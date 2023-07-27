@@ -19,6 +19,8 @@ AAICon::AAICon()
 void AAICon::OnPossess(APawn* _InPawn)
 {
 	Super::OnPossess(_InPawn);
+	AIPrePos=GetPawn()->GetActorLocation();
+	
 
 	if (nullptr != BehaviorTreeComponent && true == BehaviorTreeComponent->IsValidLowLevel())
 	{
@@ -48,3 +50,7 @@ void AAICon::OnPossess(APawn* _InPawn)
 	// 직접 동작하라고 블루프린트나 C++ 명령을 내려야만 동작합니다.
 }
 
+FVector AAICon::GetPrePos()
+{
+    return AIPrePos;
+}

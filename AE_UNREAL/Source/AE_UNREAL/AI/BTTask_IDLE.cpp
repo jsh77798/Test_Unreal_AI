@@ -6,15 +6,31 @@
 #include <AI/AICon.h>
 #include <Global/GlobalEnums.h>
 #include <BehaviorTree/BlackboardComponent.h>
+#include "ReturnPositions.h"
 #include "Kismet/GameplayStatics.h"
 #include "Math/NumericLimits.h"
 
 EBTNodeResult::Type UBTTask_IDLE::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
 	Super::ExecuteTask(OwnerComp, NodeMemory);
-
 	GetGlobalCharacter(OwnerComp)->SetAniState(AIState::IDLE);
 
+
+	//AGlobalCharacter* Character = AiCon->GetPawn<AGlobalCharacter>();
+	//PrePos = Character->GetActorLocation();
+	// 
+	//UObject* TargetObject = GetBlackboardComponent(OwnerComp)->GetValueAsObject(TEXT("PrePos"));
+	//AActor* TargetActor = Cast<AActor>(TargetObject);
+
+	//FVector TargetPos = ThisPos->GetActorLocation();
+	//FVector TargetObject = GetBlackboardComponent(OwnerComp)->GetValueAsVector(TEXT("PrePos"));
+
+	ThisPos = GetGlobalCharacter(OwnerComp)->GetActorLocation();
+
+	UBTTask_AIBase* PPP=0;
+	PPP ->SetPos(ThisPos, OwnerComp);
+	
+	
 	return EBTNodeResult::Type::InProgress;
 }
 

@@ -8,6 +8,8 @@ UBTTask_AIBase::UBTTask_AIBase()
 {
 	bNotifyTick = true;
 	bNotifyTaskFinished = true;
+
+
 }
 
 void UBTTask_AIBase::OnGameplayTaskActivated(class UGameplayTask&)
@@ -209,3 +211,33 @@ class AActor* UBTTask_AIBase::GetTargetSearch(UBehaviorTreeComponent& OwnerComp)
 //{
 //	return _PrePos;
 //}
+
+void UBTTask_AIBase::SetPos(FVector& _Pos, UBehaviorTreeComponent& OwnerComp)
+{
+	if (this == nullptr)
+	{
+	    FVector PrePos;
+	    PrePos = _Pos;
+	    SPrePos = PrePos;
+		return;
+	}
+
+	//TargetObject = _Pos;
+	//GetBlackboardComponent(OwnerComp)->GetValueAsVector(TEXT("PrePos"))= _Pos;
+	//FVector TargetObject = GetBlackboardComponent(OwnerComp)->GetValueAsVector(TEXT("PrePos"));
+}
+
+FVector UBTTask_AIBase::GetPos()
+{
+
+	if (A == 1)
+	{
+		PPrePos = SPrePos;
+		return PPrePos;
+	}
+	else
+	{
+		return PPrePos;
+	}
+
+}

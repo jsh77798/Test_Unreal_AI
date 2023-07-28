@@ -18,7 +18,7 @@ class AE_UNREAL_API UBTTask_RETURN : public UBTTask_AIBase
 	UBTTask_RETURN();
 
 	//FVector R_PrePos;
-
+	FVector PrePos;
 protected:
 	EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory);
 

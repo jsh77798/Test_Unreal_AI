@@ -17,6 +17,6 @@ class AE_UNREAL_API UBTTask_IDLE : public UBTTask_AIBase
 
 protected:
 	EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory);
-
+	FVector ThisPos;
 	void TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DelataSeconds);
 };

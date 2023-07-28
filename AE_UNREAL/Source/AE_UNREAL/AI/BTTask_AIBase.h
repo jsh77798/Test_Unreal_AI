@@ -46,15 +46,27 @@ public:
 	EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory);
 
 	void TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DelataSeconds) override;
-
+	//TArray<FVector> Positions;
 	/*
 	FVector PrePos;
 	FVector MainPrePos;
 	int A=0;
 	*/
+	void SetPos(FVector& _Pos, UBehaviorTreeComponent& OwnerComp);
+	FVector GetPos();
 
-	FVector BTPrePos();
-	FVector GetPrePos();
+	/*
+	FVector PPrePos;
+	FVector SPrePos;
+	int A = 0;
+	*/
+
+	static FVector PPrePos;
+	static FVector SPrePos;
+	static int A;
+
+	//FVector BTPrePos();
+	//FVector GetPrePos();
 //public:
 //	void MonsterPrePos(_Pos);
 //	FVector GetPrePos();

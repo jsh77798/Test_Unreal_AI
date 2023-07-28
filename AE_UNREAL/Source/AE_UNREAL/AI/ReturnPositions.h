@@ -15,7 +15,13 @@ class AE_UNREAL_API UReturnPositions : public UObject
 	GENERATED_BODY()
 
 public:
-	int CurrentIndex = 0;
-	TArray<FVector> Positions;
+	void SetPos(FVector _Pos);
+	FVector GetPos();
+
+	FVector PPrePos;
+	FVector PrePos;
+	int A = 0;
+
+	//FVector Positions;
 	//FVector Positions;
 };

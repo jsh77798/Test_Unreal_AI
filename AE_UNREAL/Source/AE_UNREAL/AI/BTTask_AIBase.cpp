@@ -216,13 +216,11 @@ void UBTTask_AIBase::SetPos(FVector& _Pos, UBehaviorTreeComponent& OwnerComp)
 {
 	if (this == nullptr)
 	{
-
-	    FVector PrePos;
-	    PrePos = _Pos;
-	    SPrePos = PrePos;
 		return;
-
 	}
+
+	PrePos = _Pos;
+	SPrePos = PrePos;
 
 	//TargetObject = _Pos;
 	//GetBlackboardComponent(OwnerComp)->GetValueAsVector(TEXT("PrePos"))= _Pos;

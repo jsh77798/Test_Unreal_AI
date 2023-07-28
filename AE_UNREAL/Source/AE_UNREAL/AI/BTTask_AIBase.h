@@ -60,7 +60,8 @@ public:
 	FVector SPrePos;
 	int A = 0;
 	*/
-
+protected:
+	FVector PrePos;
 	FVector PPrePos;
 	FVector SPrePos;
 	int A = 0;

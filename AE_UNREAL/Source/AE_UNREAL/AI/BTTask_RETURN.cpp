@@ -7,6 +7,7 @@
 #include <Global/GlobalEnums.h>
 #include <BehaviorTree/BlackboardComponent.h>
 #include "ReturnPositions.h"
+#include "BTTask_IDLE.h"
 #include "Monster.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
@@ -44,6 +45,7 @@ void UBTTask_RETURN::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemo
 	}
 
 	{
+
 		UBTTask_AIBase* TargetPrePos = nullptr;
 		PrePos=TargetPrePos->GetPos();
 		FVector ThisPos = GetGlobalCharacter(OwnerComp)->GetActorLocation();

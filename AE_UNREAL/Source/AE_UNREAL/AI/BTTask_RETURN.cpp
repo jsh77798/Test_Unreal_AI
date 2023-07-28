@@ -69,9 +69,16 @@ void UBTTask_RETURN::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemo
 			FRotator Rot = FRotator::MakeFromEuler({ 0, 0, Cross.Z * 500.0f * DelataSeconds });
 			GetGlobalCharacter(OwnerComp)->AddActorWorldRotation(Rot);
 		}
-		else {
+		else 
+		{
 			FRotator Rot = Dir.Rotation();
 			GetGlobalCharacter(OwnerComp)->SetActorRotation(Rot);
+		}
+
+		if (Dir.X == 0.0f && Dir.Y == 0.0f)
+		{
+			SetStateChange(OwnerComp, AIState::IDLE);
+			return;
 		}
 	}
 

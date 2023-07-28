@@ -45,6 +45,16 @@ void UBTTask_MOVE::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory
 		return;
 	}
 
+	bool DeathCheck = false;
+	bool Target = GetBlackboardComponent(OwnerComp)->GetValueAsBool(TEXT("Death"));
+
+	if (DeathCheck == true)
+	{
+		SetStateChange(OwnerComp, AIState::DEATH);
+		return;
+	}
+
+
 	{
 		FVector TargetPos = TargetActor->GetActorLocation();
 		FVector ThisPos = GetGlobalCharacter(OwnerComp)->GetActorLocation();

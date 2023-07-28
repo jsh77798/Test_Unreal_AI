@@ -95,6 +95,7 @@ void AAIPlayerCharacter::AttackAction()
 
 
 	SetAniState(AIAniState::Attack);
+
 }
 void AAIPlayerCharacter::JumpAction()
 {

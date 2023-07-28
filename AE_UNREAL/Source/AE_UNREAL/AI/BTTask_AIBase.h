@@ -61,9 +61,9 @@ public:
 	int A = 0;
 	*/
 
-	static FVector PPrePos;
-	static FVector SPrePos;
-	static int A;
+	FVector PPrePos;
+	FVector SPrePos;
+	int A = 0;
 
 	//FVector BTPrePos();
 	//FVector GetPrePos();

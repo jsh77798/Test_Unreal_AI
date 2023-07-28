@@ -216,10 +216,12 @@ void UBTTask_AIBase::SetPos(FVector& _Pos, UBehaviorTreeComponent& OwnerComp)
 {
 	if (this == nullptr)
 	{
+
 	    FVector PrePos;
 	    PrePos = _Pos;
 	    SPrePos = PrePos;
 		return;
+
 	}
 
 	//TargetObject = _Pos;
